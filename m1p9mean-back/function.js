@@ -25,14 +25,7 @@ module.exports = {
     },
 
     delete : async function($condition,$table){
-        var sql = "delete from "+$table+" where "+$condition;
-        console.log(sql);
-        // con.query(sql, function (err, result) {
-        //     if (err) throw err;
-        //     return 1;
-        // });
-        let result = await con.query(sql);
-        return result.rowCount;
+        return await client.db("mean_v1").collection($table).deleteOne($condition);
     },
 
     update : async function($objectupdate,$table,$condition){
