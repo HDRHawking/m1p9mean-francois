@@ -1,0 +1,18 @@
+.text-span{
+    margin-left: 65%;
+}
+
+.spinner{
+    z-index: 1000 !important;
+    margin-top : 15%; 
+    position: absolute;
+    margin-left: 50%;
+}
+.panier_ajout{
+    margin-left:12%;
+    height: 35px;
+}
+#gtco-header .form-wrap .tab-content .form-control{
+    color:rgb(84 80 80 / 80%) !important;
+    font-size: 15px;
+}

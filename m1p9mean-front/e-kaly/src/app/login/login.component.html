@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<!--
+	Aesthetic by gettemplates.co
+	Twitter: http://twitter.com/gettemplateco
+	URL: http://gettemplates.co
+-->
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>E-kaly</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by GetTemplates.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="GetTemplates.co" />
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+
+	<!-- Modernizr JS -->
+	<script src="../assets/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+    <![endif]-->
+    <!-- <script src="../assets/js/respond.min.js"></script> -->
+	</head>
+	<body>
+		
+	<!-- <div class="gtco-loader"></div> -->
+	
+	
+	<div id="page">
+		<mat-progress-spinner class="spinner" class="spinner" value="100" mode="indeterminate" *ngIf="IsWait"></mat-progress-spinner>
+
+	<!-- <div class="page-inner"> -->
+	<nav class="gtco-nav" role="navigation">
+		<div class="gtco-container">
+			
+			<div class="row">
+				<div class="col-sm-4 col-xs-12">
+					<div id="gtco-logo"><a href="index.html">E-kaly <em>.</em></a></div>
+				</div>
+				<div class="col-xs-8 text-right menu-1">
+					<ul>
+						<li><a href="menu.html">Menu</a></li>
+						<li class="has-dropdown">
+							<a href="services.html">Services</a>
+							<ul class="dropdown">
+								<li><a href="#">Food Catering</a></li>
+								<li><a href="#">Wedding Celebration</a></li>
+								<li><a href="#">Panier</a></li>
+							</ul>
+						</li>
+						<li><a (click)="panier()">Panier</a></li>
+						<li *ngIf = "logged" class="btn-cta"><a (click)="deconnexion()"><span>Deconnexion</span></a></li>
+						<!-- <li *ngIf = "!logged" class="btn-cta"><a (click)="seConnecter()"><span>Se Connecter</span></a></li> -->
+					</ul>	
+				</div>
+			</div>
+			
+		</div>
+	</nav>
+	
+	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(../assets/images/background_image.jpg)" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 text-left">
+					
+
+					<div class="row row-mt-15em">
+						<div class="col-md-6 mt-text " data-animate-effect="fadeInUp">
+							<h1 class="cursive-font">Delicious Taste!</h1>	
+							<span class="intro-text-small text-span"> by <a href="#" target="_blank">E-kaly</a></span>
+						</div>
+						<div class="col-md-6 col-md-push-1 " data-animate-effect="fadeInRight" *ngIf = "!logged" >
+							<div class="form-wrap">
+								<div class="tab">
+									
+									<div class="tab-content">
+										<div class="tab-content-inner active" data-content="signup" >
+											<h2 style='color:red' *ngIf = "message!=''" align="center">{{ message}}</h2>
+											<h3 class="cursive-font" align="center">Connectez-vous ici !!!</h3>
+
+												
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="date-start">Identifiant</label>
+														<input [(ngModel)]="utilisateur.identifiant" name="contact" type="text" id="" class="form-control">
+													</div>
+												</div>
+												
+												
+
+												
+
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="date-start">Mot de passe</label>
+														<input [(ngModel)]="utilisateur.motdepasse" name="mdp" type="password" id="" class="form-control" style="color:black">
+													</div>
+												</div>
+
+
+												<!-- <div class="row form-group">
+													<div class="col-md-6 col-md-offset-3">
+														<input (click)="inscription()" type="submit" class="btn btn-primary btn-block" value="S'inscrire">
+													</div>
+												</div> -->
+												<div class="row form-group" *ngIf = "!logged">
+													<div class="col-md-6 col-md-offset-3">
+														<input (click)="login()" type="submit" class="btn btn-primary btn-block" value="Se Connecter">
+													</div>
+												</div>
+											<!-- </form>	 -->
+										</div>
+
+										
+									</div>
+								</div>
+							</div>
+						</div>
+
+						
+					</div>
+							
+					
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="gtco-section">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2 class="cursive-font primary-color">Popular Dishes</h2>
+					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+				</div>
+			</div>
+			<div class="row">
+
+				<div class="col-lg-4 col-md-4 col-sm-6" *ngFor="let p of produit">
+					<a class="fh5co-card-item image-popup">
+						<figure>
+							<div class="overlay"><i class="ti-plus"></i></div>
+							<img src="../assets/images/{{ p.image }}" alt="Image" class="img-responsive">
+						</figure>
+						<div class="fh5co-text">
+							<h2>{{ p.libelle }}</h2>
+							<p>{{ p.ingredients }}</p>
+							<p><span class="price cursive-font">Ar {{ p.prix }} </span>  <button class="btn btn-primary panier_ajout" *ngIf = "logged" (click)="add_panier(p.libelle , p.code_produit,p.prix)" >ADD</button></p>
+						</div>
+					</a>
+				</div>
+				
+
+			</div>
+		</div>
+	</div>
+	<footer id="gtco-footer" role="contentinfo" style="background-image: url(../assets/images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row row-pb-md">
+
+				
+
+				
+				<div class="col-md-12 text-center">
+					<div class="gtco-widget">
+						<h3>Get In Touch</h3>
+						<ul class="gtco-quick-contact">
+							<li><a href="#"><i class="icon-phone"></i> +261 34 63 306 08 </a></li>
+							<li><a href="#"><i class="icon-mail2"></i> francoisnomena@gmail.com</a></li>
+							<li><a href="#"><i class="icon-chat"></i> Live chat</a></li>
+						</ul>
+					</div>
+					<div class="gtco-widget">
+						<h3>Social Network</h3>
+						<ul class="gtco-social-icons">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-12 text-center copyright">
+					<p><small class="block">&copy; 2022 All Rights Reserved.</small> 
+						<small class="block">Designed by <a href="http://gettemplates.co/" target="_blank">Francois Rakotonomenjanahary</a> <a href="http://unsplash.com/" target="_blank"></a></small></p>
+				</div>
+
+			</div>
+
+			
+
+		</div>
+	</footer>
+	<!-- </div> -->
+
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="../assets/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="../assets/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="../assets/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="../assets/js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="../assets/js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="../assets/js/jquery.countTo.js"></script>
+
+	<!-- Stellar Parallax -->
+	<script src="../assets/js/jquery.stellar.min.js"></script>
+
+	<!-- Magnific Popup -->
+	<script src="../assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="../assets/js/magnific-popup-options.js"></script>
+	
+	<script src="../assets/js/moment.min.js"></script>
+	<script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
+
+
+	<!-- Main -->
+	<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

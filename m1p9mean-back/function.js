@@ -5,8 +5,14 @@ const client = connection.connexion();
 module.exports = {
     select : async function($table) {
         const collection = await client.db("mean_v1").collection($table).find().toArray();
-        console.log(collection);
-        return ;
+        // console.log(collection);
+        return collection;
+    },
+
+    select : async function($table,$where) {
+        const collection = await client.db("mean_v1").collection($table).find($where).toArray();
+        // console.log(collection);
+        return collection;
     },
 
     hash: function($pwd){
@@ -21,7 +27,8 @@ module.exports = {
     },
 
     insert : async function($table,$object){
-        return await client.db("mean_v1").collection($table).insertOne($object);
+        console.log($object);
+        return await client.db("mean_v1").collection($table).insertOne(JSON.parse($object));
     },
 
     delete : async function($condition,$table){
@@ -29,6 +36,7 @@ module.exports = {
     },
 
     update : async function($objectupdate,$table,$condition){
+        console.log($object);
         return await client.db("mean_v1").collection($table).updateOne($condition,$objectupdate);
     }
 }
