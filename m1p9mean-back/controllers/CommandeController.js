@@ -22,6 +22,7 @@ module.exports = class CommandeController{
             'code_client' : req.query.user,
             'etat' : 0,
             'code_livreur' : 0,
+            'commande_date': new Date()
           });
         body_fille = JSON.parse(req.query.json_commande+"");
         console.log(body_fille);

@@ -11,6 +11,7 @@ import { Meta } from '@angular/platform-browser';
 export class ApiService {
     
     baseUrl:string = "http://127.0.0.1:3000/";
+    // baseUrl:string = "https://e-kalymada.herokuapp.com/";
 
     constructor(private httpClient: HttpClient) {
 
