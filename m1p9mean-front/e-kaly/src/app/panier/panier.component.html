@@ -53,18 +53,19 @@
 				</div>
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
-						<li><a href="menu.html">Menu</a></li>
-						<li class="has-dropdown">
+						<!-- <li><a href="menu.html">Menu</a></li> -->
+						<!-- <li class="has-dropdown">
 							<a href="services.html">Services</a>
 							<ul class="dropdown">
 								<li><a href="#">Food Catering</a></li>
 								<li><a href="#">Wedding Celebration</a></li>
 								<li><a href="#">Panier</a></li>
 							</ul>
-						</li>
+						</li> -->
 						<li><a (click)="panier()">Panier</a></li>
 						<li *ngIf = "logged" class="btn-cta"><a (click)="deconnexion()"><span>Deconnexion</span></a></li> 
 						<li *ngIf = "!logged" class="btn-cta"><a (click)="seConnecter()"><span>Se Connecter</span></a></li>
+						<li class="col-xs-4"><input placeholder="Search" class="form-control" (keypress)="onKeypressEvent($event)"/></li>
 					</ul>	
 				</div>
 			</div>

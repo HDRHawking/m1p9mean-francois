@@ -12,6 +12,7 @@ import { ModalComponent } from '../modal/modal.component';
 export class HomeComponent implements OnInit {
 
   produit:any;
+  restaurant:any;
   utilisateur = { nom :'',prenom:'',identifiant:"",motdepasse:"",email:"",contact:"",adresse:''};
   utilisateurStatus: any;
   user_session = "";
@@ -30,6 +31,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.apiService.getAllProduct().subscribe(response => {
       this.produit = response.data; 
+    });
+    this.apiService.listerestaurant().subscribe(response => {
+      this.restaurant = response.data; 
     });
     if(localStorage.getItem('id_session')!=null){
       this.logged = true;
@@ -128,6 +132,16 @@ export class HomeComponent implements OnInit {
         this.IsWait = false;
       },1000);
     }
+  }
+
+  fiche_restaurant(code : string){
+    this.IsWait = true;
+    this.apiService.listeproduitrestaurant(code).subscribe(response => {
+      this.produit = response.data; 
+    });
+    setTimeout(()=>{
+      this.IsWait = false;
+    },1000);
   }
 
   title = 'e-kaly';

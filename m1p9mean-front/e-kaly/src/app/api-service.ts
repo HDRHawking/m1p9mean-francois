@@ -74,4 +74,22 @@ export class ApiService {
               catchError(this.handleError)
         );
     }
+
+    public listerestaurant(): Observable<MetaData>{
+      return this.httpClient
+            .get<MetaData>(this.baseUrl+"liste-restaurant")
+            .pipe(
+              retry(2),
+              catchError(this.handleError)
+        );
+    }
+
+    public listeproduitrestaurant(code : string): Observable<MetaData>{
+      return this.httpClient
+            .get<MetaData>(this.baseUrl+"liste-produit-restaurant?code="+code)
+            .pipe(
+              retry(2),
+              catchError(this.handleError)
+        );
+    }
 }

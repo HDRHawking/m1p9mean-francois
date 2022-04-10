@@ -29,7 +29,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 
 	<!-- Modernizr JS -->
-	<script src="../assets/js/modernizr-2.6.2.min.js"></script>
+	<!-- <script src="../assets/js/modernizr-2.6.2.min.js"></script> -->
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
     <![endif]-->
@@ -53,11 +53,11 @@
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
 						<li class="has-dropdown">
-							<a href="services.html">Services</a>
+							<a href="services.html">Restaurant</a>
 							<ul class="dropdown">
-								<li><a href="#">Food Catering</a></li>
-								<li><a href="#">Wedding Celebration</a></li>
-								<li><a href="#">Panier</a></li>
+								<li *ngFor="let r of restaurant"><a (click)="fiche_restaurant( r.code_restaurant )">{{ r.libelle }}</a></li>
+								<!-- <li><a href="#">Wedding Celebration</a></li>
+								<li><a href="#">Panier</a></li> -->
 							</ul>
 						</li>
 						<li><a (click)="panier()">Panier</a></li>
@@ -185,7 +185,7 @@
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2 class="cursive-font primary-color">Popular Dishes</h2>
+					<h2 class="cursive-font primary-color">Notre Plat  du jour</h2>
 					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 				</div>
 			</div>
@@ -257,31 +257,31 @@
 	</div>
 	
 	<!-- jQuery -->
-	<script src="../assets/js/jquery.min.js"></script>
+	<!-- <script src="../assets/js/jquery.min.js"></script> -->
 	<!-- jQuery Easing -->
-	<script src="../assets/js/jquery.easing.1.3.js"></script>
+	<!-- <script src="../assets/js/jquery.easing.1.3.js"></script> -->
 	<!-- Bootstrap -->
-	<script src="../assets/js/bootstrap.min.js"></script>
+	<!-- <script src="../assets/js/bootstrap.min.js"></script> -->
 	<!-- Waypoints -->
-	<script src="../assets/js/jquery.waypoints.min.js"></script>
+	<!-- <script src="../assets/js/jquery.waypoints.min.js"></script> -->
 	<!-- Carousel -->
-	<script src="../assets/js/owl.carousel.min.js"></script>
+	<!-- <script src="../assets/js/owl.carousel.min.js"></script> -->
 	<!-- countTo -->
-	<script src="../assets/js/jquery.countTo.js"></script>
+	<!-- <script src="../assets/js/jquery.countTo.js"></script> -->
 
 	<!-- Stellar Parallax -->
-	<script src="../assets/js/jquery.stellar.min.js"></script>
+	<!-- <script src="../assets/js/jquery.stellar.min.js"></script> -->
 
 	<!-- Magnific Popup -->
-	<script src="../assets/js/jquery.magnific-popup.min.js"></script>
-	<script src="../assets/js/magnific-popup-options.js"></script>
+	<!-- <script src="../assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="../assets/js/magnific-popup-options.js"></script> -->
 	
-	<script src="../assets/js/moment.min.js"></script>
-	<script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
+	<!-- <script src="../assets/js/moment.min.js"></script>
+	<script src="../assets/js/bootstrap-datetimepicker.min.js"></script> -->
 
 
 	<!-- Main -->
-	<script src="../assets/js/main.js"></script>
+	<!-- <script src="../assets/js/main.js"></script> -->
 
 	</body>
 </html>

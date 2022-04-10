@@ -3,17 +3,17 @@ const app = express();
 
 // const AdministrateurController = require('./controllers/AdminstrateurController');
 const ClientController =  require('./controllers/ClientController');
-// const LivreurController = require('./controllers/LivreurController');
+const RestaurantController = require('./controllers/RestaurantController');
 const CommandeController = require('./controllers/CommandeController');
 const ProduitController = require('./controllers/ProduitController');
 const CategorieController = require('./controllers/CategorieController');
 
-const hostname = '127.0.0.1';
-const port = 3000;//process.env.PORT
+const hostname = 'https://e-kalymada.herokuapp.com';
+const port = process.env.PORT
 
 // let administrateurController = new AdministrateurController();
 let clientController = new ClientController();
-// let livreurController = new LivreurController();
+let restaurantController = new RestaurantController();
 let commandeController = new CommandeController();
 let produitController = new ProduitController();
 let categorieController = new CategorieController();
@@ -25,6 +25,19 @@ app.get('/liste-categorie',async function(req, res){
 	await categorieController.select(req,res);
 });
 
+app.get('/liste-restaurant',async function(req, res){
+	res.statusCode = 200;
+	res.setHeader('Content-Type', 'application/json');
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	await restaurantController.select(req,res);
+});
+
+app.get('/liste-produit-restaurant',async function(req, res){
+	res.statusCode = 200;
+	res.setHeader('Content-Type', 'application/json');
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	await restaurantController.select_produit(req,res);
+});
 
 app.get('/liste-produit',async function(req, res){
 	res.statusCode = 200;
